@@ -172,10 +172,10 @@ function RegisterForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-base py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <h2 className="mt-6 text-center text-2xl sm:text-3xl font-extrabold text-gray-900">
+          <h2 className="mt-6 text-center text-2xl sm:text-3xl font-extrabold text-[#191919]">
             Create your account
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
@@ -200,7 +200,7 @@ function RegisterForm() {
                 type="text"
                 autoComplete="name"
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-3 sm:py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none rounded-none relative block w-full px-3 py-3 sm:py-2 border border-gray-300 placeholder-gray-500 text-[#191919] rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Full Name"
                 value={formData.name}
                 onChange={handleInputChange}
@@ -216,7 +216,7 @@ function RegisterForm() {
                 type="email"
                 autoComplete="email"
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-3 sm:py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none rounded-none relative block w-full px-3 py-3 sm:py-2 border border-gray-300 placeholder-gray-500 text-[#191919] focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Email address"
                 value={formData.email}
                 onChange={handleInputChange}
@@ -232,7 +232,7 @@ function RegisterForm() {
                 type={showPassword ? "text" : "password"}
                 autoComplete="new-password"
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-3 sm:py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm pr-10"
+                className="appearance-none rounded-none relative block w-full px-3 py-3 sm:py-2 border border-gray-300 placeholder-gray-500 text-[#191919] focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm pr-10"
                 placeholder="Password"
                 value={formData.password}
                 onChange={handlePasswordChange}
@@ -264,7 +264,7 @@ function RegisterForm() {
                 type={showConfirmPassword ? "text" : "password"}
                 autoComplete="new-password"
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-3 sm:py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm pr-10"
+                className="appearance-none rounded-none relative block w-full px-3 py-3 sm:py-2 border border-gray-300 placeholder-gray-500 text-[#191919] rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm pr-10"
                 placeholder="Confirm Password"
                 value={formData.confirmPassword}
                 onChange={handleInputChange}
@@ -290,8 +290,8 @@ function RegisterForm() {
 
           {/* Password Requirements */}
           {formData.password.length > 0 && (
-            <div className="bg-gray-50 p-4 rounded-md">
-              <h3 className="text-sm font-medium text-gray-900 mb-3">Password Requirements:</h3>
+            <div className="bg-section p-4 rounded-md">
+              <h3 className="text-sm font-medium text-[#191919] mb-3">Password Requirements:</h3>
               <div className="grid grid-cols-1 gap-2">
                 {[
                   { label: "At least 8 characters", met: formData.password.length >= 8 },
@@ -382,7 +382,7 @@ function RegisterForm() {
 export default function Register() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-base">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></div>
       </div>
     }>

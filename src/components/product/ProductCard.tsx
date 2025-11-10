@@ -66,7 +66,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div 
-      className="group relative bg-white rounded-xl border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-lg overflow-hidden"
+      className="group relative bg-white rounded-xl border border-[#191919] hover:border-[#191919] transition-all duration-300 hover:shadow-lg overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -94,8 +94,8 @@ export default function ProductCard({ product }: ProductCardProps) {
                 }}
                 className={`w-2 h-2 rounded-full transition-all ${
                   index === imageIndex 
-                    ? 'bg-white shadow-sm' 
-                    : 'bg-white/50 hover:bg-white/75'
+                    ? 'bg-section shadow-sm' 
+                    : 'bg-section/50 hover:bg-section/75'
                 }`}
               />
             ))}
@@ -126,7 +126,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         }`}>
           <Link 
             href={`/products/${product._id}`}
-            className="bg-white text-gray-900 px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-medium shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 text-sm sm:text-base"
+            className="bg-section text-[#191919] px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-medium shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 text-sm sm:text-base"
           >
             View Details
           </Link>
@@ -136,7 +136,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       {/* Product Info */}
       <div className="p-3 sm:p-4">
         <Link href={`/products/${product._id}`}>
-          <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-1 line-clamp-1 group-hover:text-blue-600 transition-colors cursor-pointer">
+          <h3 className="font-semibold text-[#191919] text-base sm:text-lg mb-1 line-clamp-1 group-hover:text-blue-600 transition-colors cursor-pointer">
             {product.name}
           </h3>
         </Link>
@@ -147,7 +147,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <span className="text-lg sm:text-2xl font-bold text-gray-900">
+            <span className="text-lg sm:text-2xl font-bold text-[#191919]">
               {formatPrice(product.price)}
             </span>
             {product.stock > 0 && (
@@ -162,7 +162,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             disabled={product.stock === 0 || isAddingToCart}
             className={`px-3 py-2 sm:px-4 sm:py-2 rounded-lg text-sm font-medium transition-colors ${
               product.stock > 0 && !isAddingToCart
-                ? 'bg-gray-900 text-white hover:bg-gray-800'
+                ? 'bg-[#31493C] text-white hover:bg-gray-800 button-hover-shadow transition-all duration-200'
                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
             }`}
           >

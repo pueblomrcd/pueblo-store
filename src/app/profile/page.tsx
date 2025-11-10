@@ -5,6 +5,7 @@ import { useUserState } from "@/hooks/useUserState";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import PasswordChangeModal from "@/components/profile/PasswordChangeModal";
 
@@ -38,7 +39,7 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-base">
       <Header />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="mb-6 sm:mb-8">
@@ -48,7 +49,7 @@ export default function ProfilePage() {
           </p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sm:p-8">
+        <div className="bg-section rounded-lg shadow-sm border border-gray-200 p-6 sm:p-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <div>
               <h2 className="text-xl font-semibold text-gray-900 mb-4">Account Information</h2>
@@ -81,7 +82,7 @@ export default function ProfilePage() {
                 </button>
                 <button 
                   onClick={() => setIsPasswordModalOpen(true)}
-                  className="w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                  className="w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-section transition-colors"
                 >
                   <div className="font-medium text-gray-900">Change Password</div>
                   <div className="text-sm text-gray-600">Update your account password</div>
@@ -122,6 +123,8 @@ export default function ProfilePage() {
         isOpen={isPasswordModalOpen}
         onClose={() => setIsPasswordModalOpen(false)}
       />
+
+      <Footer />
     </div>
   );
 }

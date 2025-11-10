@@ -3,6 +3,7 @@
 import { useAuth } from '@/hooks/useAuth';
 import { useUserState } from '@/hooks/useUserState';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { useEffect, useState } from 'react';
 import { Package, Calendar, DollarSign, Truck } from 'lucide-react';
 import Link from 'next/link';
@@ -88,7 +89,7 @@ export default function OrdersPage() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-base">
         <Header />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <div className="text-center">
@@ -101,7 +102,7 @@ export default function OrdersPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-base">
       <Header />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
@@ -136,7 +137,7 @@ export default function OrdersPage() {
         ) : (
           <div className="space-y-6">
             {orders.map((order) => (
-              <div key={order._id} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+              <div key={order._id} className="bg-section rounded-lg shadow-sm border border-gray-200 overflow-hidden">
                 <div className="p-6 border-b border-gray-200">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                     <div>
@@ -189,6 +190,8 @@ export default function OrdersPage() {
           </div>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 } 

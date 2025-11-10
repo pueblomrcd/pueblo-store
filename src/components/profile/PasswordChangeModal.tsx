@@ -73,11 +73,11 @@ export default function PasswordChangeModal({ isOpen, onClose }: PasswordChangeM
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-[#191919] bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-section rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold text-gray-900">Change Password</h2>
+            <h2 className="text-xl font-semibold text-[#191919]">Change Password</h2>
             <button
               onClick={handleClose}
               className="text-gray-400 hover:text-gray-600 transition-colors"
@@ -158,7 +158,7 @@ export default function PasswordChangeModal({ isOpen, onClose }: PasswordChangeM
               <button
                 type="button"
                 onClick={handleClose}
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-base transition-colors"
                 disabled={isLoading}
               >
                 Cancel

@@ -106,9 +106,9 @@ export default function DatabaseManagement() {
   const isProduction = process.env.NODE_ENV === 'production';
 
   return (
-    <div className="bg-white shadow-lg rounded-lg">
+    <div className="bg-section shadow-lg rounded-lg">
       <div className="px-4 sm:px-6 py-6 sm:py-8">
-        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-[#191919] mb-6 sm:mb-8">
           Database Management
         </h1>
 
@@ -164,7 +164,7 @@ export default function DatabaseManagement() {
         <div className="space-y-4">
           {/* Seed Database */}
           <div className="p-4 border border-gray-200 rounded-md">
-            <h3 className="text-lg font-medium text-gray-900 mb-3">Seed Database</h3>
+            <h3 className="text-lg font-medium text-[#191919] mb-3">Seed Database</h3>
             <p className="text-sm text-gray-600 mb-4">
               Populate the database with sample products for testing and development purposes.
               This will only work if the database is currently empty.
@@ -180,7 +180,7 @@ export default function DatabaseManagement() {
 
           {/* Clear Database */}
           <div className="p-4 border border-gray-200 rounded-md">
-            <h3 className="text-lg font-medium text-gray-900 mb-3">Clear Database</h3>
+            <h3 className="text-lg font-medium text-[#191919] mb-3">Clear Database</h3>
             <p className="text-sm text-gray-600 mb-4">
               ⚠️ <strong>Warning:</strong> This will permanently delete all products from the database.
               This action cannot be undone.
@@ -236,9 +236,9 @@ export default function DatabaseManagement() {
         {/* Seed Confirmation Modal */}
         {showSeedConfirmation && (
           <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
-            <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+            <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-section">
               <div className="mt-3 text-center">
-                <h3 className="text-lg font-medium text-gray-900 mb-4">Confirm Database Seeding</h3>
+                <h3 className="text-lg font-medium text-[#191919] mb-4">Confirm Database Seeding</h3>
                 <p className="text-sm text-gray-600 mb-6">
                   Are you sure you want to seed the database with sample products? 
                   This will only work if the database is currently empty.
@@ -266,7 +266,7 @@ export default function DatabaseManagement() {
         {/* Clear Confirmation Modal */}
         {showClearConfirmation && (
           <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
-            <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+            <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-section">
               <div className="mt-3 text-center">
                 <h3 className="text-lg font-medium text-red-900 mb-4">⚠️ Danger Zone</h3>
                 <p className="text-sm text-gray-600 mb-6">

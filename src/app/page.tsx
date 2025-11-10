@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ProductsSection from "@/components/product/ProductsSection";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 // Background pattern component
 const BackgroundPattern = () => (
@@ -35,71 +36,50 @@ const FeatureCard = ({
     <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${gradientFrom} ${gradientTo} rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
       {icon}
     </div>
-    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">{title}</h3>
+    <h3 className="text-xl sm:text-2xl font-bold text-[#191919] mb-3 sm:mb-4">{title}</h3>
     <p className="text-gray-600 text-sm sm:text-base">{description}</p>
   </div>
 );
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-base">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50" />
+      <section className="relative py-12 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-base">
+        <div className="absolute inset-0 bg-gradient-to-br from-base via-section to-base" />
         <BackgroundPattern />
         
         <div className="relative max-w-6xl mx-auto text-center">
           <div className="mb-6 sm:mb-8">
-            <span className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4 sm:mb-6">
-              🚀 Trusted by 10,000+ businesses
+            <span className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full text-sm font-medium bg-[#4a6b5a] text-white mb-4 sm:mb-6">
+              ✨ Authentic Islamic Fashion
             </span>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-            The easiest way to
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-[#191919] mb-4 sm:mb-6 leading-tight">
+            Modest Fashion,
             <br />
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              supply your business
+            <span className="bg-gradient-to-r from-[#E57A44] to-[#69140E] bg-clip-text text-transparent">
+              Timeless Elegance
             </span>
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
-            Join thousands of restaurants and businesses who trust our platform for their essential supplies. 
-            Quality products, competitive prices, reliable delivery.
+            Discover authentic Islamic clothing that honors tradition while embracing contemporary style. 
+            Quality craftsmanship meets cultural values in every piece.
           </p>
           
           <div className="flex justify-center mb-8 sm:mb-12 px-4">
             <Link 
               href="/products" 
-              className="bg-black text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold hover:bg-gray-800 transition-all duration-200 transform hover:scale-105 shadow-lg"
+              className="bg-[#31493C] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold hover:bg-gray-800 transition-all duration-200 button-hover-shadow"
             >
-              Browse Products
+              Shop Collection
             </Link>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-xs sm:text-sm text-gray-500 px-4">
-            <TrustIndicator 
-              icon={<svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>}
-              text="Free shipping on orders over $50"
-            />
-            <TrustIndicator 
-              icon={<svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>}
-              text="30-day money-back guarantee"
-            />
-            <TrustIndicator 
-              icon={<svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>}
-              text="24/7 customer support"
-            />
-          </div>
         </div>
       </section>
 
@@ -107,14 +87,14 @@ export default function Home() {
       <ProductsSection limit={8} showViewAll={true} />
 
       {/* Features Section */}
-      <section className="py-12 sm:py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Everything you need to succeed
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#191919] mb-4">
+              Quality Craftsmanship, Cultural Values
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              Powerful tools and features designed to help businesses grow and operate efficiently
+              Every piece is carefully crafted to honor tradition while embracing contemporary style
             </p>
           </div>
           
@@ -123,8 +103,8 @@ export default function Home() {
               icon={<svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>}
-              title="Lightning Fast"
-              description="Get your supplies delivered quickly with our efficient logistics network. Same-day shipping available for urgent orders."
+              title="Authentic Design"
+              description="Each piece is thoughtfully designed to honor Islamic traditions while embracing modern elegance and style."
               gradientFrom="from-blue-500"
               gradientTo="to-blue-600"
             />
@@ -133,8 +113,8 @@ export default function Home() {
               icon={<svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>}
-              title="Quality Assured"
-              description="Every product is carefully selected and tested to meet the highest quality standards. Your satisfaction is our priority."
+              title="Quality Craftsmanship"
+              description="Premium materials and meticulous attention to detail ensure every garment meets our high standards of quality and comfort."
               gradientFrom="from-green-500"
               gradientTo="to-green-600"
             />
@@ -143,8 +123,8 @@ export default function Home() {
               icon={<svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
               </svg>}
-              title="Best Prices"
-              description="Competitive pricing on all products with bulk discounts available. Save money while getting the supplies you need."
+              title="Cultural Values"
+              description="Every piece reflects our commitment to modesty, respect, and the timeless values that guide our community."
               gradientFrom="from-purple-500"
               gradientTo="to-purple-600"
             />
@@ -153,24 +133,24 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-20 bg-gray-50">
+      <section className="py-12 sm:py-20 bg-base">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Ready to get started?
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#191919] mb-4">
+            Discover Your Style
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 mb-8">
-            Join thousands of businesses who trust us for their supply needs.
+            Explore our collection of authentic Islamic clothing that honors tradition with contemporary elegance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/products" 
-              className="bg-black text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-800 transition-all duration-200 transform hover:scale-105 shadow-lg"
+              className="bg-[#31493C] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-800 transition-all duration-200 button-hover-shadow"
             >
-              Start Shopping
+              Explore Collection
             </Link>
             <Link 
               href="/auth/register" 
-              className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-50 transition-all duration-200 transform hover:scale-105"
+              className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl text-lg font-semibold bg-white hover:bg-gray-50 transition-all duration-200 transform hover:scale-105"
             >
               Create Account
             </Link>
@@ -178,46 +158,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-100 py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">SupplierHub</h3>
-              <p className="text-gray-600">
-                The easiest way to supply your business with quality products.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-gray-900 mb-4">Product</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><Link href="/products" className="hover:text-gray-900">All Products</Link></li>
-                <li><Link href="/categories" className="hover:text-gray-900">Categories</Link></li>
-                <li><Link href="/deals" className="hover:text-gray-900">Deals</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-gray-900 mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><Link href="/about" className="hover:text-gray-900">About</Link></li>
-                <li><Link href="/blog" className="hover:text-gray-900">Blog</Link></li>
-                <li><Link href="/careers" className="hover:text-gray-900">Careers</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-gray-900 mb-4">Support</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><Link href="/help" className="hover:text-gray-900">Help Center</Link></li>
-                <li><Link href="/contact" className="hover:text-gray-900">Contact</Link></li>
-                <li><Link href="/privacy" className="hover:text-gray-900">Privacy</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-100 mt-8 pt-8 text-center text-sm text-gray-600">
-            <p>&copy; 2024 SupplierHub. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

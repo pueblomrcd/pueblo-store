@@ -14,7 +14,7 @@ export default function AdminPage() {
 
   return (
     <AdminProtected>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-base">
         <div className="max-w-7xl mx-auto py-6 sm:py-8 px-4 sm:px-6 lg:px-8">
           {/* Tab Navigation */}
           <div className="mb-6">
@@ -79,9 +79,9 @@ export default function AdminPage() {
           </div>
 
           {activeTab === "dashboard" && (
-            <div className="bg-white shadow-lg rounded-lg">
+            <div className="bg-section shadow-lg rounded-lg">
               <div className="px-4 sm:px-6 py-6 sm:py-8">
-                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
+                <h1 className="text-2xl sm:text-3xl font-bold text-[#191919] mb-6 sm:mb-8">
                   Admin Dashboard
                 </h1>
             
@@ -145,8 +145,8 @@ export default function AdminPage() {
                   </div>
 
                   {/* Settings Card */}
-                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 sm:p-6">
-                    <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
+                  <div className="bg-base border border-gray-200 rounded-lg p-4 sm:p-6">
+                    <h3 className="text-base sm:text-lg font-semibold text-[#191919] mb-3 sm:mb-4">
                       Settings
                     </h3>
                     <p className="text-gray-700 mb-4 text-sm sm:text-base">
@@ -188,8 +188,8 @@ export default function AdminPage() {
                 </div>
 
                 {/* Admin Info */}
-                <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-gray-50 rounded-lg">
-                  <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
+                <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-base rounded-lg">
+                  <h2 className="text-lg sm:text-xl font-semibold text-[#191919] mb-3 sm:mb-4">
                     Admin Information
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import connectDB from '@/lib/mongodb';
 import Product from '@/lib/models/Product';
 
@@ -61,35 +62,35 @@ export default async function ProductsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-base">
       <Header />
 
       {/* Page Header */}
-      <div className="bg-white border-b border-gray-100">
+      <div className="bg-section border-b border-border-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-              All Products
+            <h1 className="text-3xl sm:text-4xl font-bold text-[#191919] mb-3 sm:mb-4">
+              Our Collection
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover our comprehensive range of high-quality supplies for your business needs
+              Discover authentic Islamic clothing that honors tradition while embracing contemporary style
             </p>
           </div>
         </div>
       </div>
 
       {/* Products Section */}
-      <section className="py-12 sm:py-16 bg-gray-50">
+      <section className="py-12 sm:py-16 bg-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {products.length === 0 ? (
             <div className="text-center py-12">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">No Products Available</h2>
-              <p className="text-gray-600">Check back soon for new products!</p>
+              <h2 className="text-2xl font-bold text-[#191919] mb-4">No Items Available</h2>
+              <p className="text-gray-600">Check back soon for new additions to our collection!</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
               {products.map((product) => (
-                <div key={product._id} className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-gray-300">
+                <div key={product._id} className="group bg-white rounded-xl border border-[#191919] overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-[#191919]">
                   <Link href={`/products/${product._id}`}>
                     <div className="relative aspect-square bg-gray-100 overflow-hidden">
                       <Image
@@ -99,14 +100,14 @@ export default async function ProductsPage() {
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       {product.stock === 0 && (
-                        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-[#191919] bg-opacity-50 flex items-center justify-center">
                           <span className="text-white font-semibold text-lg">Out of Stock</span>
                         </div>
                       )}
                     </div>
                     <div className="p-3 sm:p-4 space-y-3">
                       <div className="flex items-start justify-between">
-                        <h3 className="text-sm sm:text-base font-semibold text-gray-900 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                        <h3 className="text-sm sm:text-base font-semibold text-[#191919] line-clamp-2 group-hover:text-blue-600 transition-colors">
                           {product.name}
                         </h3>
                         <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getCategoryColor(product.category)}`}>
@@ -117,7 +118,7 @@ export default async function ProductsPage() {
                         {product.description}
                       </p>
                       <div className="flex items-center justify-between">
-                        <span className="text-lg sm:text-xl font-bold text-gray-900">
+                        <span className="text-lg sm:text-xl font-bold text-[#191919]">
                           {formatPrice(product.price)}
                         </span>
                         <span className={`text-sm font-medium ${product.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
@@ -132,6 +133,8 @@ export default async function ProductsPage() {
           )}
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 } 

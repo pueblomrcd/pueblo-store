@@ -123,7 +123,7 @@ export default function OrderManagement() {
 
   if (isLoading) {
     return (
-      <div className="bg-white shadow-lg rounded-lg">
+      <div className="bg-section shadow-lg rounded-lg">
         <div className="px-6 py-8">
           <div className="flex items-center justify-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
@@ -138,7 +138,7 @@ export default function OrderManagement() {
     <div className="bg-white shadow-lg rounded-lg">
       <div className="px-6 py-8">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold text-gray-900">Order Management</h1>
+          <h1 className="text-3xl font-bold text-[#191919]">Order Management</h1>
           <button
             onClick={loadOrders}
             className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
@@ -164,11 +164,11 @@ export default function OrderManagement() {
             {orders.map((order) => (
               <div key={order._id} className="border border-gray-200 rounded-lg overflow-hidden">
                 {/* Order Header */}
-                <div className="px-6 py-4 border-b border-gray-200 bg-gray-50">
+                <div className="px-6 py-4 border-b border-gray-200 bg-base">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                     <div className="flex items-center space-x-4">
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900">
+                        <h3 className="text-lg font-semibold text-[#191919]">
                           {order.orderNumber}
                         </h3>
                         <p className="text-sm text-gray-600">
@@ -186,7 +186,7 @@ export default function OrderManagement() {
                       <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(order.status)}`}>
                         {statusOptions.find(option => option.value === order.status)?.label}
                       </span>
-                      <span className="text-lg font-semibold text-gray-900">
+                      <span className="text-lg font-semibold text-[#191919]">
                         ${order.total.toFixed(2)}
                       </span>
                     </div>
@@ -195,7 +195,7 @@ export default function OrderManagement() {
 
                 {/* Order Items */}
                 <div className="px-6 py-4">
-                  <h4 className="font-medium text-gray-900 mb-3">Order Items</h4>
+                  <h4 className="font-medium text-[#191919] mb-3">Order Items</h4>
                   <div className="space-y-3">
                     {order.items.map((item, index) => (
                       <div key={index} className="flex justify-between items-center">
@@ -204,7 +204,7 @@ export default function OrderManagement() {
                             <span className="text-xs text-gray-600">IMG</span>
                           </div>
                           <div>
-                            <p className="text-sm font-medium text-gray-900">{item.name}</p>
+                            <p className="text-sm font-medium text-[#191919]">{item.name}</p>
                             <p className="text-xs text-gray-500">Qty: {item.quantity}</p>
                           </div>
                         </div>
@@ -217,8 +217,8 @@ export default function OrderManagement() {
                 </div>
 
                 {/* Shipping Address */}
-                <div className="px-6 py-4 border-t border-gray-200 bg-gray-50">
-                  <h4 className="font-medium text-gray-900 mb-2">Shipping Address</h4>
+                <div className="px-6 py-4 border-t border-gray-200 bg-base">
+                  <h4 className="font-medium text-[#191919] mb-2">Shipping Address</h4>
                   <div className="text-sm text-gray-600">
                     <p>{order.shippingAddress.firstName} {order.shippingAddress.lastName}</p>
                     <p>{order.shippingAddress.address}</p>
@@ -230,7 +230,7 @@ export default function OrderManagement() {
                 <div className="px-6 py-4 border-t border-gray-200">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="font-medium text-gray-900 mb-2">Update Status</h4>
+                      <h4 className="font-medium text-[#191919] mb-2">Update Status</h4>
                       <p className="text-sm text-gray-600">Current status: {statusOptions.find(option => option.value === order.status)?.label}</p>
                     </div>
                     <div className="flex items-center space-x-2">

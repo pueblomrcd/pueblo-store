@@ -241,8 +241,8 @@ export default function SetupAdminPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-8 px-4">
-      <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
+    <div className="min-h-screen bg-base flex items-center justify-center py-8 px-4">
+      <div className="max-w-md w-full bg-section rounded-lg shadow-lg p-8">
         <div className="text-center mb-6">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">
             Setup Initial Admin Account
@@ -285,7 +285,7 @@ export default function SetupAdminPage() {
 
           {/* Email Requirements */}
           {formData.email.length > 0 && (
-            <div className="bg-gray-50 p-4 rounded-md">
+            <div className="bg-section p-4 rounded-md">
               <h3 className="text-sm font-medium text-gray-900 mb-3">Email Requirements:</h3>
               <div className="grid grid-cols-1 gap-2">
                 {[
@@ -396,7 +396,7 @@ export default function SetupAdminPage() {
 
           {/* Password Requirements */}
           {formData.password.length > 0 && (
-            <div className="bg-gray-50 p-4 rounded-md">
+            <div className="bg-section p-4 rounded-md">
               <h3 className="text-sm font-medium text-gray-900 mb-3">Password Requirements:</h3>
               <div className="grid grid-cols-1 gap-2">
                 {[

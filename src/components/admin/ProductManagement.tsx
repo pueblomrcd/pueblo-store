@@ -241,7 +241,7 @@ export default function ProductManagement() {
 
   if (loading) {
     return (
-      <div className="bg-white shadow-lg rounded-lg">
+      <div className="bg-section shadow-lg rounded-lg">
         <div className="px-6 py-8">
           <div className="animate-pulse">
             <div className="h-8 bg-gray-200 rounded w-1/4 mb-4"></div>
@@ -259,11 +259,11 @@ export default function ProductManagement() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white shadow-lg rounded-lg">
+      <div className="bg-section shadow-lg rounded-lg">
         <div className="px-6 py-4 border-b border-gray-200">
           <div className="flex justify-between items-center">
             <div>
-              <h2 className="text-xl font-semibold text-gray-900">Product Management</h2>
+              <h2 className="text-xl font-semibold text-[#191919]">Product Management</h2>
               <p className="text-sm text-gray-600 mt-1">Manage your product inventory</p>
             </div>
             <button
@@ -296,9 +296,9 @@ export default function ProductManagement() {
 
       {/* Product Form */}
       {showForm && (
-        <div className="bg-white shadow-lg rounded-lg">
+        <div className="bg-section shadow-lg rounded-lg">
           <div className="px-6 py-4 border-b border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-900">
+            <h3 className="text-lg font-semibold text-[#191919]">
               {editingProduct ? 'Edit Product' : 'Add New Product'}
             </h3>
           </div>
@@ -459,7 +459,7 @@ export default function ProductManagement() {
                 onChange={handleInputChange}
                 className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
               />
-              <label className="ml-2 block text-sm text-gray-900">
+              <label className="ml-2 block text-sm text-[#191919]">
                 Product is active
               </label>
             </div>
@@ -469,7 +469,7 @@ export default function ProductManagement() {
               <button
                 type="button"
                 onClick={cancelForm}
-                className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
+                className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-base transition-colors"
               >
                 Cancel
               </button>
@@ -497,10 +497,10 @@ export default function ProductManagement() {
       )}
 
       {/* Products List */}
-      <div className="bg-white shadow-lg rounded-lg">
+      <div className="bg-section shadow-lg rounded-lg">
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
+            <thead className="bg-base">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Product
@@ -522,7 +522,7 @@ export default function ProductManagement() {
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className="bg-section divide-y divide-gray-200">
               {products.map((product) => (
                 <tr key={product._id}>
                   <td className="px-6 py-4 whitespace-nowrap">
@@ -535,7 +535,7 @@ export default function ProductManagement() {
                         />
                       </div>
                       <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">
+                        <div className="text-sm font-medium text-[#191919]">
                           {product.name}
                         </div>
                         <div className="text-sm text-gray-500">
@@ -549,10 +549,10 @@ export default function ProductManagement() {
                       {product.category}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-[#191919]">
                     ${product.price.toFixed(2)}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-[#191919]">
                     {product.stock}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">

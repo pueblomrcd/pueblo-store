@@ -4,6 +4,7 @@ import { useCartStore } from '@/store/cartStore';
 import Link from 'next/link';
 import { ArrowLeft, ShoppingBag } from 'lucide-react';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import CartItem from '@/components/cart/CartItem';
 import OrderSummary from '@/components/cart/OrderSummary';
 import EmptyState from '@/components/ui/EmptyState';
@@ -27,7 +28,7 @@ export default function CartPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-base">
       <Header />
 
       {/* Page Content */}
@@ -36,7 +37,7 @@ export default function CartPage() {
         <div className="mb-6 sm:mb-8">
           <Link 
             href="/products" 
-            className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+            className="inline-flex items-center text-gray-600 hover:text-[#191919] transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Continue Shopping
@@ -45,7 +46,7 @@ export default function CartPage() {
 
         {/* Page Header */}
         <div className="mb-6 sm:mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Shopping Cart</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#191919] mb-2">Shopping Cart</h1>
           <p className="text-gray-600">
             {totalItems > 0 
               ? `${totalItems} item${totalItems === 1 ? '' : 's'} in your cart`
@@ -56,12 +57,12 @@ export default function CartPage() {
 
         {items.length === 0 ? (
           /* Empty Cart State */
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 sm:p-12">
+          <div className="bg-section rounded-lg shadow-sm border border-gray-200 p-8 sm:p-12">
             <EmptyState
               title="Your cart is empty"
-              description="Looks like you haven't added any items to your cart yet. Start shopping to add some great products!"
+              description="Looks like you haven't added any items to your cart yet. Start shopping to discover authentic Islamic clothing that honors tradition with contemporary style!"
               icon={<ShoppingBag className="h-12 w-12 sm:h-16 sm:w-16" />}
-              actionText="Browse Products"
+              actionText="Browse Collection"
               actionHref="/products"
             />
           </div>
@@ -70,9 +71,9 @@ export default function CartPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Cart Items List */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+              <div className="bg-section rounded-lg shadow-sm border border-gray-200 overflow-hidden">
                 <div className="p-4 sm:p-6 border-b border-gray-200">
-                  <h2 className="text-lg font-semibold text-gray-900">Cart Items</h2>
+                  <h2 className="text-lg font-semibold text-[#191919]">Cart Items</h2>
                 </div>
                 <div className="divide-y divide-gray-200">
                   {items.map((item) => (
@@ -100,6 +101,8 @@ export default function CartPage() {
           </div>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 } 

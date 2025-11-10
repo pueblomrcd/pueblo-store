@@ -159,8 +159,8 @@ export default function CreateAdminPage() {
 
   return (
     <AdminProtected>
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center py-8 px-4">
-        <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
+      <div className="min-h-screen bg-base flex items-center justify-center py-8 px-4">
+        <div className="max-w-md w-full bg-section rounded-lg shadow-lg p-8">
           <h1 className="text-2xl font-bold text-gray-900 mb-6 text-center">
             Create Admin User
           </h1>

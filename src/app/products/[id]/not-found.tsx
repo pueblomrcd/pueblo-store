@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import Footer from '@/components/layout/Footer';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+    <div className="min-h-screen bg-base flex items-center justify-center">
       <div className="max-w-md mx-auto text-center">
         <div className="mb-8">
           <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -21,16 +22,18 @@ export default function NotFound() {
             href="/products" 
             className="block w-full bg-black text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800 transition-colors"
           >
-            Browse All Products
+            Browse Collection
           </Link>
           <Link 
             href="/" 
-            className="block w-full border border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
+            className="block w-full border border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:bg-section transition-colors"
           >
             Back to Home
           </Link>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 } 

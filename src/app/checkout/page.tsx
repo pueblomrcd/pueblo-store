@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
+import Footer from '@/components/layout/Footer';
 
 export default function CheckoutPage() {
   const { data: session, status } = useSession();
@@ -23,16 +24,16 @@ export default function CheckoutPage() {
 
   if (isLoading || status === 'loading') {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-base flex items-center justify-center">
         <LoadingSpinner size="lg" text="Loading checkout..." />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 sm:py-12">
+    <div className="min-h-screen bg-base py-8 sm:py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+        <div className="bg-section rounded-lg shadow-lg p-6 sm:p-8">
           <div className="text-center">
             <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-gray-100 mb-4">
               <svg className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -58,7 +59,7 @@ export default function CheckoutPage() {
               
               <button
                 onClick={() => router.push('/cart')}
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-section hover:bg-base focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
               >
                 View Cart
               </button>
@@ -66,6 +67,8 @@ export default function CheckoutPage() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 } 

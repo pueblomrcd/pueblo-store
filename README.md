@@ -1,3 +1,9 @@
+# To Do:
+logo
+database change
+other changes to env variables
+collections/items
+
 # SupplierHub 🚀
 
 A modern, full-stack e-commerce platform built for business supplies and equipment. Built with Next.js 15, TypeScript, and Tailwind CSS.

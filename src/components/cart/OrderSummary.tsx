@@ -13,8 +13,8 @@ export default function OrderSummary({ totalItems, totalPrice, onClearCart, vari
   const isSidebar = variant === 'sidebar';
   
   return (
-    <div className={`bg-white rounded-lg shadow-sm border border-gray-200 ${isSidebar ? 'p-6' : 'p-6 sticky top-24'}`}>
-      <h2 className="text-lg font-semibold text-gray-900 mb-4">Order Summary</h2>
+    <div className={`bg-section rounded-lg shadow-sm border border-gray-200 ${isSidebar ? 'p-6' : 'p-6 sticky top-24'}`}>
+      <h2 className="text-lg font-semibold text-[#191919] mb-4">Order Summary</h2>
       
       <div className="space-y-3 mb-6">
         <div className="flex justify-between text-sm">
@@ -46,7 +46,7 @@ export default function OrderSummary({ totalItems, totalPrice, onClearCart, vari
           >
             Checkout Disabled
           </button>
-          <div className="mt-2 p-3 bg-gray-50 border border-gray-200 rounded-lg">
+          <div className="mt-2 p-3 bg-base border border-gray-200 rounded-lg">
             <p className="text-xs text-gray-600">
               Checkout functionality is currently disabled.
             </p>
@@ -56,7 +56,7 @@ export default function OrderSummary({ totalItems, totalPrice, onClearCart, vari
         {!isSidebar && (
           <Link
             href="/cart"
-            className="w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors text-center block"
+            className="w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-base transition-colors text-center block"
           >
             View Full Cart
           </Link>

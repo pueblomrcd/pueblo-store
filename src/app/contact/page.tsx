@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
 import { ArrowLeft, Mail, Phone, MapPin, Send } from 'lucide-react';
 
@@ -27,7 +28,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-base">
       <Header />
 
       {/* Page Content */}
@@ -36,7 +37,7 @@ export default function ContactPage() {
         <div className="mb-6 sm:mb-8">
           <Link 
             href="/" 
-            className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+            className="inline-flex items-center text-gray-600 hover:text-[#191919] transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
@@ -45,7 +46,7 @@ export default function ContactPage() {
 
         {/* Page Header */}
         <div className="mb-8 sm:mb-12">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-[#191919] mb-4">Contact Us</h1>
           <p className="text-lg text-gray-600 max-w-3xl">
             Have questions? We&apos;re here to help! Get in touch with our team and we&apos;ll get back to you as soon as possible.
           </p>
@@ -54,7 +55,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Contact Form */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sm:p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+            <h2 className="text-2xl font-bold text-[#191919] mb-6">Send us a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -122,7 +123,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors font-medium flex items-center justify-center"
+                className="w-full bg-[#31493C] text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition-all duration-200 button-hover-shadow font-medium flex items-center justify-center"
               >
                 <Send className="w-5 h-5 mr-2" />
                 Send Message
@@ -133,13 +134,13 @@ export default function ContactPage() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sm:p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+              <h2 className="text-2xl font-bold text-[#191919] mb-6">Get in Touch</h2>
               <div className="space-y-6">
                 <div className="flex items-start">
                   <Mail className="w-6 h-6 text-blue-600 mt-1 mr-4" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">Email</h3>
-                    <p className="text-gray-600">support@supplierhub.com</p>
+                    <h3 className="font-semibold text-[#191919]">Email</h3>
+                    <p className="text-gray-600">support@pueblomercado.com</p>
                     <p className="text-sm text-gray-500">We&apos;ll respond within 24 hours</p>
                   </div>
                 </div>
@@ -147,7 +148,7 @@ export default function ContactPage() {
                 <div className="flex items-start">
                   <Phone className="w-6 h-6 text-green-600 mt-1 mr-4" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">Phone</h3>
+                    <h3 className="font-semibold text-[#191919]">Phone</h3>
                     <p className="text-gray-600">+1 (555) 123-4567</p>
                     <p className="text-sm text-gray-500">Monday - Friday, 9AM - 6PM EST</p>
                   </div>
@@ -156,7 +157,7 @@ export default function ContactPage() {
                 <div className="flex items-start">
                   <MapPin className="w-6 h-6 text-purple-600 mt-1 mr-4" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">Address</h3>
+                    <h3 className="font-semibold text-[#191919]">Address</h3>
                     <p className="text-gray-600">
                       123 Business Street<br />
                       Suite 100<br />
@@ -168,22 +169,22 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sm:p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+              <h2 className="text-2xl font-bold text-[#191919] mb-4">Frequently Asked Questions</h2>
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">How do I place an order?</h3>
+                  <h3 className="font-semibold text-[#191919] mb-2">How do I place an order?</h3>
                   <p className="text-gray-600 text-sm">
                     Browse our products, add items to your cart, and proceed to checkout. We accept all major credit cards.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">What&apos;s your return policy?</h3>
+                  <h3 className="font-semibold text-[#191919] mb-2">What&apos;s your return policy?</h3>
                   <p className="text-gray-600 text-sm">
                     We offer a 30-day return policy for most items. Contact us if you have any issues with your order.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Do you ship internationally?</h3>
+                  <h3 className="font-semibold text-[#191919] mb-2">Do you ship internationally?</h3>
                   <p className="text-gray-600 text-sm">
                     Currently, we ship to the United States and Canada. International shipping coming soon!
                   </p>
@@ -193,6 +194,8 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

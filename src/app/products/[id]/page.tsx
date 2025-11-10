@@ -8,6 +8,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { useAddToCart } from '@/hooks/useAddToCart';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import ErrorMessage from '@/components/ui/ErrorMessage';
+import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 
 interface Product {
@@ -85,7 +86,7 @@ export default function ProductDetailPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="min-h-screen bg-base flex items-center justify-center">
         <LoadingSpinner size="lg" text="Loading product..." />
       </div>
     );
@@ -93,7 +94,7 @@ export default function ProductDetailPage() {
 
   if (error || !product) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="min-h-screen bg-base flex items-center justify-center">
         <ErrorMessage 
           message={error || 'Product not found'} 
           onRetry={() => window.location.reload()}
@@ -131,14 +132,14 @@ export default function ProductDetailPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-base">
              {/* Header */}
        <Header />
 
       {/* Main Product Section - Gumroad Style */}
       <section className="relative py-8 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-base via-section to-base"></div>
         <div className="absolute inset-0 opacity-50" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
@@ -147,7 +148,7 @@ export default function ProductDetailPage() {
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
             {/* Product Image */}
             <div className="space-y-4 sm:space-y-6">
-              <div className="relative aspect-square bg-white rounded-2xl sm:rounded-3xl border border-gray-200 overflow-hidden shadow-2xl">
+              <div className="relative aspect-square bg-section rounded-2xl sm:rounded-3xl border border-gray-200 overflow-hidden shadow-2xl">
                 <Image
                   src={product.images[0]}
                   alt={product.name}
@@ -161,7 +162,7 @@ export default function ProductDetailPage() {
               {product.images.length > 1 && (
                 <div className="grid grid-cols-4 gap-3 sm:gap-4">
                   {product.images.slice(1, 5).map((image, index) => (
-                    <div key={index} className="relative aspect-square bg-white rounded-xl sm:rounded-2xl border border-gray-200 overflow-hidden shadow-lg">
+                    <div key={index} className="relative aspect-square bg-section rounded-xl sm:rounded-2xl border border-gray-200 overflow-hidden shadow-lg">
                       <Image
                         src={image}
                         alt={`${product.name} - Image ${index + 2}`}
@@ -235,7 +236,7 @@ export default function ProductDetailPage() {
                     disabled={!isAuthenticated}
                     className={`flex-1 py-4 sm:py-6 px-6 sm:px-8 border-2 border-gray-300 rounded-xl sm:rounded-2xl text-lg sm:text-xl font-semibold transition-all duration-200 transform hover:scale-105 ${
                       isAuthenticated 
-                        ? 'text-gray-700 hover:bg-gray-50' 
+                        ? 'text-gray-700 hover:bg-section' 
                         : 'text-gray-400 cursor-not-allowed'
                     }`}
                   >
@@ -243,7 +244,7 @@ export default function ProductDetailPage() {
                   </button>
                 </div>
                 
-                <button className="w-full py-3 sm:py-4 px-6 sm:px-8 border border-gray-300 text-gray-700 rounded-xl sm:rounded-2xl text-base sm:text-lg font-medium hover:bg-gray-50 transition-colors">
+                <button className="w-full py-3 sm:py-4 px-6 sm:px-8 border border-gray-300 text-gray-700 rounded-xl sm:rounded-2xl text-base sm:text-lg font-medium hover:bg-section transition-colors">
                   Add to Wishlist
                 </button>
               </div>
@@ -277,7 +278,7 @@ export default function ProductDetailPage() {
       </section>
 
       {/* Product Details Section */}
-      <section className="py-12 sm:py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -318,7 +319,7 @@ export default function ProductDetailPage() {
       </section>
 
       {/* Related Products Section */}
-      <section className="py-12 sm:py-20 bg-gray-50">
+      <section className="py-12 sm:py-20 bg-base">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -331,12 +332,14 @@ export default function ProductDetailPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {/* This would be populated with related products */}
-            <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 p-4 sm:p-6 text-center shadow-lg">
+            <div className="bg-section rounded-xl sm:rounded-2xl border border-gray-200 p-4 sm:p-6 text-center shadow-lg">
               <p className="text-gray-500 text-sm sm:text-base">Related products will appear here</p>
             </div>
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 } 

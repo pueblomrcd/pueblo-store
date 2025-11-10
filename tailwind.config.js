@@ -9,7 +9,13 @@ module.exports = {
     extend: {
       // Custom color palette can be added here
       colors: {
-        // Example: 'primary': '#3B82F6',
+        'base': '#efe7da',
+        'section': '#f5efe5',
+        'border-dark': '#191919',
+        'gradient-start': '#E57A44',
+        'gradient-end': '#69140E',
+        'tag-bg': '#4a6b5a',
+        'tag-text': '#1a2e24',
       },
       // Custom animations can be added here
       animation: {

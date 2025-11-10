@@ -125,15 +125,15 @@ export default function UserManagement() {
   }
 
   return (
-    <div className="bg-white shadow-lg rounded-lg">
+    <div className="bg-section shadow-lg rounded-lg">
       <div className="px-6 py-4 border-b border-gray-200">
-        <h2 className="text-xl font-semibold text-gray-900">User Management</h2>
+        <h2 className="text-xl font-semibold text-[#191919]">User Management</h2>
         <p className="text-sm text-gray-600 mt-1">Manage user accounts and roles</p>
       </div>
       
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
+          <thead className="bg-base">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 User
@@ -149,9 +149,9 @@ export default function UserManagement() {
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="bg-section divide-y divide-gray-200">
             {users.map((user) => (
-              <tr key={user._id} className="hover:bg-gray-50">
+              <tr key={user._id} className="hover:bg-base">
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
                     <div className="flex-shrink-0 h-10 w-10">
@@ -162,7 +162,7 @@ export default function UserManagement() {
                       </div>
                     </div>
                     <div className="ml-4">
-                      <div className="text-sm font-medium text-gray-900">{user.name}</div>
+                      <div className="text-sm font-medium text-[#191919]">{user.name}</div>
                       <div className="text-sm text-gray-500">{user.email}</div>
                     </div>
                   </div>

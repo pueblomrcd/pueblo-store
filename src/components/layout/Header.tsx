@@ -36,25 +36,25 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="border-b border-gray-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+    <header className="border-b border-border-dark bg-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="text-xl sm:text-2xl font-bold text-gray-900">
-              SupplierHub
+            <Link href="/" className="text-xl sm:text-2xl font-bold text-[#191919]">
+              Pueblo Mercado
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link href="/products" className="text-gray-600 hover:text-gray-900 transition-colors">
-              Products
+            <Link href="/products" className="text-gray-600 hover:text-[#191919] transition-colors">
+              Collection
             </Link>
-            <Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/about" className="text-gray-600 hover:text-[#191919] transition-colors">
               About
             </Link>
-            <Link href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/contact" className="text-gray-600 hover:text-[#191919] transition-colors">
               Contact
             </Link>
           </nav>
@@ -67,7 +67,7 @@ export default function Header() {
                 <div className="relative" ref={userMenuRef}>
                   <button
                     onClick={() => setShowUserMenu(!showUserMenu)}
-                    className="flex items-center space-x-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                    className="flex items-center space-x-2 text-sm text-gray-600 hover:text-[#191919] transition-colors"
                   >
                     <span className="hidden sm:inline">Welcome, {user?.name}</span>
                     <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
@@ -79,7 +79,7 @@ export default function Header() {
                   </button>
                   
                   {showUserMenu && (
-                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-200">
+                    <div className="absolute right-0 mt-2 w-48 bg-section rounded-md shadow-lg py-1 z-50 border border-gray-200">
                       <div className="px-4 py-2 text-xs text-gray-500 border-b border-gray-100">
                         {userProfile?.email}
                       </div>
@@ -121,12 +121,12 @@ export default function Header() {
               </div>
             ) : (
               <>
-                <Link href="/auth/login" className="text-gray-600 hover:text-gray-900 transition-colors">
+                <Link href="/auth/login" className="text-gray-600 hover:text-[#191919] transition-colors">
                   Sign In
                 </Link>
                 <Link 
                   href="/auth/register" 
-                  className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
+                  className="bg-[#31493C] text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-all duration-200 button-hover-shadow"
                 >
                   Get Started
                 </Link>
@@ -139,7 +139,7 @@ export default function Header() {
             <CartIcon />
             <button
               onClick={() => setShowMobileMenu(!showMobileMenu)}
-              className="p-2 text-gray-600 hover:text-gray-900 transition-colors"
+              className="p-2 text-gray-600 hover:text-[#191919] transition-colors"
               aria-label="Toggle mobile menu"
             >
               {showMobileMenu ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -151,28 +151,28 @@ export default function Header() {
         {showMobileMenu && (
           <div 
             ref={mobileMenuRef}
-            className="md:hidden border-t border-gray-200 bg-white"
+            className="md:hidden border-t border-gray-200 bg-section"
           >
             <div className="px-4 py-6 space-y-4">
               {/* Mobile Navigation Links */}
               <div className="space-y-2">
                 <Link 
                   href="/products" 
-                  className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
+                  className="block py-2 text-gray-600 hover:text-[#191919] transition-colors"
                   onClick={() => setShowMobileMenu(false)}
                 >
-                  Products
+                  Collection
                 </Link>
                 <Link 
                   href="/about" 
-                  className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
+                  className="block py-2 text-gray-600 hover:text-[#191919] transition-colors"
                   onClick={() => setShowMobileMenu(false)}
                 >
                   About
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
+                  className="block py-2 text-gray-600 hover:text-[#191919] transition-colors"
                   onClick={() => setShowMobileMenu(false)}
                 >
                   Contact
@@ -192,14 +192,14 @@ export default function Header() {
                     <div className="space-y-2">
                       <Link 
                         href="/profile" 
-                        className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
+                        className="block py-2 text-gray-600 hover:text-[#191919] transition-colors"
                         onClick={() => setShowMobileMenu(false)}
                       >
                         My Profile
                       </Link>
                       <Link 
                         href="/orders" 
-                        className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
+                        className="block py-2 text-gray-600 hover:text-[#191919] transition-colors"
                         onClick={() => setShowMobileMenu(false)}
                       >
                         My Orders
@@ -207,7 +207,7 @@ export default function Header() {
                       {isAdmin() && (
                         <Link 
                           href="/admin" 
-                          className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
+                          className="block py-2 text-gray-600 hover:text-[#191919] transition-colors"
                           onClick={() => setShowMobileMenu(false)}
                         >
                           Admin Panel
@@ -218,7 +218,7 @@ export default function Header() {
                           logout();
                           setShowMobileMenu(false);
                         }}
-                        className="block w-full text-left py-2 text-gray-600 hover:text-gray-900 transition-colors"
+                        className="block w-full text-left py-2 text-gray-600 hover:text-[#191919] transition-colors"
                       >
                         Sign Out
                       </button>
@@ -228,14 +228,14 @@ export default function Header() {
                   <div className="space-y-3">
                     <Link 
                       href="/auth/login" 
-                      className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
+                      className="block py-2 text-gray-600 hover:text-[#191919] transition-colors"
                       onClick={() => setShowMobileMenu(false)}
                     >
                       Sign In
                     </Link>
                     <Link 
                       href="/auth/register" 
-                      className="block bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-center"
+                      className="block bg-[#31493C] text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-all duration-200 button-hover-shadow text-center"
                       onClick={() => setShowMobileMenu(false)}
                     >
                       Get Started

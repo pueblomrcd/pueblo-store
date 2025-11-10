@@ -40,7 +40,7 @@ export default function Alert({ type, message, onClose, className }: AlertProps)
         };
       default:
         return {
-          container: 'bg-gray-50 border-gray-200',
+          container: 'bg-base border-gray-200',
           icon: 'text-gray-600',
           text: 'text-gray-800',
           iconComponent: AlertCircle,
