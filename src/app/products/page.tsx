@@ -69,6 +69,15 @@ export default async function ProductsPage() {
       <div className="bg-section border-b border-border-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <div className="text-center">
+            <div className="flex justify-center mb-4 sm:mb-6">
+              <Image 
+                src="/logo.png" 
+                alt="Pueblo Mercado" 
+                width={80} 
+                height={80} 
+                className="object-contain"
+              />
+            </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-[#191919] mb-3 sm:mb-4">
               Our Collection
             </h1>

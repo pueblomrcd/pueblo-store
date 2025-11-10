@@ -15,13 +15,7 @@ export const metadata: Metadata = {
   description: "Discover authentic Islamic clothing that honors tradition while embracing contemporary style. Quality craftsmanship meets cultural values in every piece.",
   viewport: "width=device-width, initial-scale=1, maximum-scale=1",
   icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/globe.svg', type: 'image/svg+xml' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
+    icon: '/favicon.ico',
   },
 };
 

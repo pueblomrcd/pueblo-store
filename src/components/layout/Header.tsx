@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import CartIcon from '@/components/cart/CartIcon';
 import { useAuth } from '@/hooks/useAuth';
 import { useUserState } from '@/hooks/useUserState';
@@ -41,8 +42,17 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="text-xl sm:text-2xl font-bold text-[#191919]">
-              Pueblo Mercado
+            <Link href="/" className="flex items-center space-x-2">
+              <Image 
+                src="/logo.png" 
+                alt="Pueblo Mercado" 
+                width={40} 
+                height={40} 
+                className="object-contain"
+              />
+              <span className="text-xl sm:text-2xl font-bold text-[#191919]">
+                Pueblo Mercado
+              </span>
             </Link>
           </div>
 

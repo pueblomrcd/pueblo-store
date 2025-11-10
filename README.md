@@ -1,7 +1,5 @@
 # To Do:
-logo
-database change
-other changes to env variables
+changes to env variables
 collections/items
 
 # Pueblo Mercado 🏪

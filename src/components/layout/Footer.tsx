@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -6,7 +7,16 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold text-[#191919] mb-4">Pueblo Mercado</h3>
+            <Link href="/" className="flex items-center space-x-2 mb-4">
+              <Image 
+                src="/logo.png" 
+                alt="Pueblo Mercado" 
+                width={32} 
+                height={32} 
+                className="object-contain"
+              />
+              <h3 className="text-lg font-semibold text-[#191919]">Pueblo Mercado</h3>
+            </Link>
             <p className="text-gray-600">
               Modest Fashion, Timeless Elegance. Discover authentic Islamic clothing that honors tradition while embracing contemporary style.
             </p>

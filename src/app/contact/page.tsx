@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, Mail, Phone, MapPin, Send } from 'lucide-react';
 
 export default function ContactPage() {
@@ -45,9 +46,18 @@ export default function ContactPage() {
         </div>
 
         {/* Page Header */}
-        <div className="mb-8 sm:mb-12">
+        <div className="mb-8 sm:mb-12 text-center">
+          <div className="flex justify-center mb-6">
+            <Image 
+              src="/logo.png" 
+              alt="Pueblo Mercado" 
+              width={80} 
+              height={80} 
+              className="object-contain"
+            />
+          </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-[#191919] mb-4">Contact Us</h1>
-          <p className="text-lg text-gray-600 max-w-3xl">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Have questions? We&apos;re here to help! Get in touch with our team and we&apos;ll get back to you as soon as possible.
           </p>
         </div>

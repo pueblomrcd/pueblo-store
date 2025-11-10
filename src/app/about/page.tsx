@@ -2,6 +2,7 @@
 
 import Header from '@/components/layout/Header';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, Building2, Users, Truck, Shield } from 'lucide-react';
 import Footer from '@/components/layout/Footer';
 
@@ -24,9 +25,18 @@ export default function AboutPage() {
         </div>
 
         {/* Page Header */}
-        <div className="mb-8 sm:mb-12">
+        <div className="mb-8 sm:mb-12 text-center">
+          <div className="flex justify-center mb-6">
+            <Image 
+              src="/logo.png" 
+              alt="Pueblo Mercado" 
+              width={80} 
+              height={80} 
+              className="object-contain"
+            />
+          </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-[#191919] mb-4">About Pueblo Mercado</h1>
-          <p className="text-lg text-gray-600 max-w-3xl">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Discover authentic Islamic clothing that honors tradition while embracing contemporary style. 
             Quality craftsmanship meets cultural values in every piece.
           </p>
