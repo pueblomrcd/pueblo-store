@@ -4,7 +4,7 @@ database change
 other changes to env variables
 collections/items
 
-# SupplierHub 🚀
+# Pueblo Mercado 🏪
 
 A modern, full-stack e-commerce platform built for business supplies and equipment. Built with Next.js 15, TypeScript, and Tailwind CSS.
 
@@ -78,8 +78,8 @@ A modern, full-stack e-commerce platform built for business supplies and equipme
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/supplier-ecommerce.git
-   cd supplier-ecommerce
+   git clone https://github.com/pueblomrcd/pueblo-store.git
+   cd pueblo-store
    ```
 
 2. **Install dependencies**
@@ -120,7 +120,7 @@ A modern, full-stack e-commerce platform built for business supplies and equipme
 ## 📁 Project Structure
 
 ```
-supplier-ecommerce/
+pueblo-store/
 ├── src/
 │   ├── app/                    # Next.js app router
 │   │   ├── api/               # API routes
@@ -178,7 +178,7 @@ supplier-ecommerce/
 
 2. **Local MongoDB**
    - Install MongoDB locally
-   - Use connection string: `mongodb://localhost:27017/supplier-ecommerce`
+   - Use connection string: `mongodb://localhost:27017/pueblo-store`
 
 ### Stripe Setup
 
@@ -376,11 +376,11 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **Last Updated**: December 2024  
 **Version**: 0.1.0  
-**Maintainer**: SupplierHub Team
+**Maintainer**: Pueblo Mercado Team
 
 ---
 
 <div align="center">
-  <p>Made with ❤️ by the SupplierHub Team</p>
+  <p>Made with ❤️ by the Pueblo Mercado Team</p>
   <p>If this project helps you, please give it a ⭐</p>
 </div>
